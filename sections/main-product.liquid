@@ -65,25 +65,6 @@
     >
   {%- endif -%}
 
-{% if product.tags.size > 0 %}
-  <div class="product-tags">
-    {% for tag in product.tags %}
-      <button class="tag-button" data-tag="{{ tag }}">{{ tag }}</button>
-    {% endfor %}
-  </div>
-{% endif %}
-  
-{% assign productTags = product.tags  %}
-{% if productTags.size > 0 %}
-  <ul>
-    {% for tag in productTags %}
-      <li><a href="/collections/all/{{ tag | handle }}" target="_blank">{{ tag }}</a></li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No tags found for this product.</p>
-{% endif %}
-  
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
@@ -947,6 +928,20 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        }
+      ]
+    },
+    {
+      "type": "tags",
+      "name": "Tags",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_tags",
+          "default": true,
+          "label": "Tags",
+          "info": "Tags"
         }
       ]
     },
