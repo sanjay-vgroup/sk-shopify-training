@@ -10,4 +10,14 @@
   Usage:
   {% render 'tag-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
-Tags
+
+{% assign productTags = product.tags %}
+{% if productTags.size > 0 %}
+  <ul>
+    {% for tag in productTags %}
+      <li>
+        <a href="/collections/all/{{ tag | handle }}" target="_blank">{{ tag }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
