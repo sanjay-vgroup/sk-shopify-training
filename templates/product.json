@@ -93,8 +93,15 @@
             "share_label": "Share"
           }
         },
+        "tags_VEUdY7": {
+          "type": "tags",
+          "settings": {
+            "show_dynamic_tags": true
+          }
+        },
         "custom_liquid_iQcTxk": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "{% assign productTags = product.tags  %}\n{% if productTags.size > 0 %}\n  <ul>\n    {% for tag in productTags %}\n      <li><a href=\"\/collections\/all\/{{ tag | handle }}\" target=\"_blank\">{{ tag }}<\/a><\/li>\n    {% endfor %}\n  <\/ul>\n{% endif %}"
           }
@@ -120,6 +127,7 @@
         "collapsible-row-2",
         "collapsible-row-3",
         "share",
+        "tags_VEUdY7",
         "custom_liquid_iQcTxk",
         "custom_liquid_6PHz4Q"
       ],
