@@ -98,6 +98,12 @@
           "settings": {
             "custom_liquid": "{% assign productTags = product.tags  %}\n{% if productTags.size > 0 %}\n  <ul>\n    {% for tag in productTags %}\n      <li><a href=\"\/collections\/all\/{{ tag | handle }}\" target=\"_blank\">{{ tag }}<\/a><\/li>\n    {% endfor %}\n  <\/ul>\n{% endif %}"
           }
+        },
+        "custom_liquid_6PHz4Q": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% assign productCollections = product.collections %}\n{% assign sortedCollections = productCollections | sort: 'title' %}\n{% if sortedCollections.size > 0 %}\n  <h2>Collections - <\/h2>\n  <ul>\n    {% for collection in sortedCollections %}\n      <li><a href=\"{{ collection.url }}\" target=\"_blank\">{{ collection.title }}<\/a><\/li>\n    {% endfor %}\n  <\/ul>\n{% else %}\n  <p>This product is not associated with any collections.<\/p>\n{% endif %}"
+          }
         }
       },
       "block_order": [
@@ -114,7 +120,8 @@
         "collapsible-row-2",
         "collapsible-row-3",
         "share",
-        "custom_liquid_iQcTxk"
+        "custom_liquid_iQcTxk",
+        "custom_liquid_6PHz4Q"
       ],
       "settings": {
         "enable_sticky_info": true,
