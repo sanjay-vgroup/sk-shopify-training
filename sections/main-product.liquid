@@ -65,24 +65,7 @@
     >
   {%- endif -%}
 
-{% if product.tags.size > 0 %}
-  <div class="product-tags">
-    {% for tag in product.tags %}
-      <button class="tag-button" data-tag="{{ tag }}">{{ tag }}</button>
-    {% endfor %}
-  </div>
-{% endif %}
-  
-{% assign productTags = product.tags  %}
-{% if productTags.size > 0 %}
-  <ul>
-    {% for tag in productTags %}
-      <li><a href="/collections/all/{{ tag | handle }}" target="_blank">{{ tag }}</a></li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No tags found for this product.</p>
-{% endif %}
+
   
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
