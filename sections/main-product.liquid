@@ -64,14 +64,15 @@
       onload="this.media='all'"
     >
   {%- endif -%}
-
-  {% if product.tags.size > 0 %}
-  <div class="product-tags">
-    {% for tag in product.tags %}
-      {{ tag | json}}
-      <button class="tag-button" data-tag="{{ tag }}">{{ tag }}</button>
+{% assign productTags = product.tags | split: ', ' %}
+{% if productTags.size > 0 %}
+  <ul>
+    {% for tag in productTags %}
+      <li><a href="/collections/all/{{ tag | handle }}" target="_blank">{{ tag }}</a></li>
     {% endfor %}
-  </div>
+  </ul>
+{% else %}
+  <p>No tags found for this product.</p>
 {% endif %}
   
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
