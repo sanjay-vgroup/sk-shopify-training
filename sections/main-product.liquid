@@ -68,6 +68,7 @@
   {{ tag | handle }}
 {% if productTags.size > 0 %}
   <ul>
+    {{ tag | handle }}
     {% for tag in productTags %}
       <li><a href="/collections/all/{{ tag | handle }}" target="_blank">{{ tag }}</a></li>
     {% endfor %}
