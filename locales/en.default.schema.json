@@ -1791,6 +1791,9 @@
           "options__3": {
             "label": "Drawer"
           },
+          "options__4": {
+            "label": "Bottom"
+          },
           "info": "Drawer is the default mobile layout."
         },
         "enable_sorting": {
