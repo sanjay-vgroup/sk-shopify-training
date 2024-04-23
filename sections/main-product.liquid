@@ -73,7 +73,7 @@
   </div>
 {% endif %}
   
-{% assign productTags = product.tags | split: ' ' %}
+{% assign productTags = product.tags  %}
 {% if productTags.size > 0 %}
   <ul>
     {% for tag in productTags %}
