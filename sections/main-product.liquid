@@ -68,7 +68,7 @@
   {% if product.tags.size > 0 %}
   <div class="product-tags">
     {% for tag in product.tags %}
-      {{ tag }}
+      {{ tag | json}}
       <button class="tag-button" data-tag="{{ tag }}">{{ tag }}</button>
     {% endfor %}
   </div>
