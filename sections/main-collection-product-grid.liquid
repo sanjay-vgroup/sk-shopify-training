@@ -184,7 +184,10 @@
       </div>
 
       {% comment %} by Sanjay Karonjiya {% endcomment %}
-      {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+      {%- if section.settings.enable_filtering
+        or section.settings.enable_sorting
+        and section.settings.filter_type == 'bottom'
+      -%}
         <aside
           aria-labelledby="verticalTitle"
           class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
