@@ -64,7 +64,8 @@
       onload="this.media='all'"
     >
   {%- endif -%}
-{% assign productTags = product.tags | split: '' %}
+{% assign productTags = product.tags | split: ' ' %}
+  {{ tag | handle }}
 {% if productTags.size > 0 %}
   <ul>
     {% for tag in productTags %}
