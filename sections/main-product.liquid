@@ -64,6 +64,15 @@
       onload="this.media='all'"
     >
   {%- endif -%}
+
+{% if product.tags.size > 0 %}
+  <div class="product-tags">
+    {% for tag in product.tags %}
+      <button class="tag-button" data-tag="{{ tag }}">{{ tag }}</button>
+    {% endfor %}
+  </div>
+{% endif %}
+  
 {% assign productTags = product.tags | split: ' ' %}
 {% if productTags.size > 0 %}
   <ul>
