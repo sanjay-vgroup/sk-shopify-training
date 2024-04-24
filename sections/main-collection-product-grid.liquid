@@ -206,6 +206,30 @@
   {%- endif -%}
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const products = document.querySelectorAll('.product-item'); // Change this selector to match your product grid items
+    
+    products.forEach(product => {
+        const productHandle = product.getAttribute('data-product-handle');
+        const productUrl = product.getAttribute('data-product-url');
+        const variantsJson = product.getAttribute('data-variants-json');
+        const variants = JSON.parse(variantsJson);
+
+        variants.forEach(variant => {
+            const newProduct = product.cloneNode(true);
+            newProduct.setAttribute('data-variant-id', variant.id);
+            newProduct.querySelector('.product-title').textContent = `${productHandle} - ${variant.title}`;
+            newProduct.querySelector('.product-price').textContent = variant.price;
+            newProduct.querySelector('a').setAttribute('href', `${productUrl}?variant=${variant.id}`);
+            product.parentNode.insertBefore(newProduct, product.nextSibling);
+        });
+
+        product.style.display = 'none'; // Hide the original product
+    });
+});
+</script>
+
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",
