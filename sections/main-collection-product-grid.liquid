@@ -159,16 +159,18 @@
                 {% if product.variants.size > 0 %}
                   {% for variant in product.variants %}
 
-             {% assign alternateClass = "" %}
+            {% assign alternateClass = "" %}
+
+            {% if alternateBackground %}        
             {% assign mod = cnt | modulo: 2 %}
             {% if mod ==1 %}
-            {{ mod }}
                {% assign alternateClass = "alternateClass" %}
-              {% else %}
+            {% else %}
               {% assign alternateClass = "" %}
             {% endif %}
-            {% assign cnt = cnt | plus: 1 %}
 
+            {% assign cnt = cnt | plus: 1 %}
+            {% endif %}
                     
                               <li 
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {{ alternateClass }}"
