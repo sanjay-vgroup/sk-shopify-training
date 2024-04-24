@@ -155,10 +155,12 @@
                 {%- endif -%}
 
                 {% if product.variants.size > 0 %}
-                  {% assign cnt = 1 %}}
+                  {% assign cnt = 1 %}
                   {% for variant in product.variants %}
                     
                   {{ cnt }}
+                      {% assign cnt = cnt | plus: 1 %}
+
                     
                               <li 
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
