@@ -155,8 +155,12 @@
                 {%- endif -%}
 
                 {% if product.variants.size > 0 %}
+                  {% assign cnt = 1 %}}
                   {% for variant in product.variants %}
-                              <li {% if alternateBackground %} background: red {% endif %} 
+                    
+                  {{ cnt }}
+                    
+                              <li 
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
