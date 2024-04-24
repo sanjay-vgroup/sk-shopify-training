@@ -159,10 +159,10 @@
                 {% if product.variants.size > 0 %}
                   {% for variant in product.variants %}
                     
-      {% assign mod = cnt | modulo: 2 %}
-      {% if mod ==1 %}
-        {{ mod }}
-        {% endif %}
+            {% assign mod = cnt | modulo: 2 %}
+            {% if mod ==1 %}
+            {{ mod }}
+            {% endif %}
                     {% assign cnt = cnt | plus: 1 %}
 
                     
