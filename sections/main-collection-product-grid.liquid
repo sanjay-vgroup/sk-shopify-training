@@ -160,12 +160,9 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                                                              {{ product | json }}
-                                                              {{ variant | json }}
-
-
-                  <!-- {% render 'card-product', 
-                    card_product: variant,
+ 
+                 {% render 'card-product', 
+                    card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
                     show_secondary_image: section.settings.show_secondary_image,
@@ -173,8 +170,9 @@
                     show_rating: section.settings.show_rating,
                     lazy_load: lazy_load,
                     show_quick_add: section.settings.enable_quick_add,
-                    section_id: section.id
-                  %} -->
+                    section_id: section.id,
+                    variant: true
+                  %} 
                 </li>
                   {% endfor %}
                 {%- endif -%}
