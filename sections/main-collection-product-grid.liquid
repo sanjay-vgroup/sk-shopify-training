@@ -25,6 +25,9 @@
     }
   }
 {%- endstyle -%}
+
+ alternate_background: collection.metafields.custom.alternate_backgrounds
+ {% assign alternateBackground =  collection.metafields.custom.alternate_backgrounds %}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
@@ -153,7 +156,7 @@
 
                 {% if product.variants.size > 0 %}
                   {% for variant in product.variants %}
-                              <li
+                              <li {% if alternateBackground %} background: red {% endif %} 
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
@@ -171,8 +174,8 @@
                     lazy_load: lazy_load,
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id,
-                    variant: variant,
-                    alternate_background: collection.metafields.custom.alternate_backgrounds
+                    variant: variant
+                   
                   %} 
                 </li>
                   {% endfor %}
