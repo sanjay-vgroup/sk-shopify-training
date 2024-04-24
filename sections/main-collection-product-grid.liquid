@@ -25,16 +25,6 @@
     }
   }
 {%- endstyle -%}
-{% for product in collection.products %}
-  {% for variant in product.variants %}
-    <div class="product-item">
-      <h2 class="product-title">{{ product.title }} - {{ variant.title }}</h2>
-      <p class="product-price">{{ variant.price | money }}</p>
-      <!-- Add other product details as needed -->
-      <a href="{{ product.url }}?variant={{ variant.id }}">View Product</a>
-    </div>
-  {% endfor %}
-{% endfor %}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
@@ -160,7 +150,10 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                <li
+
+                {% if product.variants.size > 0 %}
+                  {% for variant in product.variants %}
+                              <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
@@ -179,6 +172,10 @@
                     section_id: section.id
                   %}
                 </li>
+                  {% endfor %}
+                {%- endif -%}
+    
+
               {%- endfor -%}
             </ul>
 
