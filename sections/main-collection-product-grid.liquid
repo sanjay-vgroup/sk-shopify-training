@@ -153,9 +153,9 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
+                  {% assign cnt = 1 %}
 
                 {% if product.variants.size > 0 %}
-                  {% assign cnt = 1 %}
                   {% for variant in product.variants %}
                     
                   {{ cnt }}
