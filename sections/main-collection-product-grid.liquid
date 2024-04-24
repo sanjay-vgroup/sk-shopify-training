@@ -160,7 +160,8 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                                                                {{ variant.title }}
+                                                              {{ variant | json }}
+
 
                   {% render 'card-product', 
                     card_product: variant,
