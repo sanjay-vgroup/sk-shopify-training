@@ -159,21 +159,24 @@
                 {% if product.variants.size > 0 %}
                   {% for variant in product.variants %}
 
-            {% assign alternateClass = "" %}
 
-            {% if alternateBackground %}        
-            {% assign mod = cnt | modulo: 2 %}
-            {% if mod ==1 %}
-               {% assign alternateClass = "alternateClass" %}
-            {% else %}
-              {% assign alternateClass = "" %}
-            {% endif %}
+        {% comment %}
+                {% assign alternateClass = "" %}
+                          {% if alternateBackground %}        
+                          {% assign mod = cnt | modulo: 2 %}
+                          {% if mod ==1 %}
+                             {% assign alternateClass = "alternateClass" %}
+                          {% else %}
+                            {% assign alternateClass = "" %}
+                          {% endif %}
+              
+                          {% assign cnt = cnt | plus: 1 %}
+                          {% endif %} 
+        {% endcomment %}
 
-            {% assign cnt = cnt | plus: 1 %}
-            {% endif %}
                     
                               <li 
-                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {{ alternateClass }} {% cycle 'even', 'odd' %}"
+                  class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {% if alternateBackground %} alternateBackground {% endif %} {% cycle 'even', 'odd' %}"
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
