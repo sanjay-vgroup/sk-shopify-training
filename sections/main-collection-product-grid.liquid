@@ -159,8 +159,9 @@
                 {% if product.variants.size > 0 %}
                   {% for variant in product.variants %}
                     
-                  {{ forloop.index }}
-                      {% assign cnt = cnt | plus: 1 %}
+      {% assign mod = cnt | modulo: 2 %}
+{{ mod }}
+                    {% assign cnt = cnt | plus: 1 %}
 
                     
                               <li 
