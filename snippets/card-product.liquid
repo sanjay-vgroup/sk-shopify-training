@@ -28,7 +28,10 @@
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 
 {% if variant  %}
-Yes variant exist;  
+
+  {% assign variantPrice = variant.price %}
+  {{ variantPrice }}
+  
 {% endif %}
 
 {%- if card_product and card_product != empty -%}
