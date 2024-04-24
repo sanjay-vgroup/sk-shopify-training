@@ -25,7 +25,16 @@
     }
   }
 {%- endstyle -%}
-
+{% for product in collection.products %}
+  {% for variant in product.variants %}
+    <div class="product-item">
+      <h2 class="product-title">{{ product.title }} - {{ variant.title }}</h2>
+      <p class="product-price">{{ variant.price | money }}</p>
+      <!-- Add other product details as needed -->
+      <a href="{{ product.url }}?variant={{ variant.id }}">View Product</a>
+    </div>
+  {% endfor %}
+{% endfor %}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
