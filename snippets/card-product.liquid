@@ -28,7 +28,7 @@
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 
 {% if variant  %}
-{{ alternate_background }}
+Alternate Background: {{ alternate_background }}
   {% assign variantPrice = variant.price %}
   {{ variantPrice }}
   
