@@ -228,6 +228,24 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "171652905413750787": {
+      "type": "apps",
+      "blocks": {
+        "trainingclass1_accordian_FtzePB": {
+          "type": "shopify:\/\/apps\/trainingclass1\/blocks\/accordian\/ab9584d6-0917-4ccc-97db-01b78332556b",
+          "settings": {
+            "title": "Test",
+            "content": "DefauTest lt Content"
+          }
+        }
+      },
+      "block_order": [
+        "trainingclass1_accordian_FtzePB"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -237,6 +255,7 @@
     "collage",
     "video",
     "multicolumn",
-    "17164437513765b33d"
+    "17164437513765b33d",
+    "171652905413750787"
   ]
 }
