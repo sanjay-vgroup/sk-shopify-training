@@ -213,35 +213,28 @@
     },
     "17164437513765b33d": {
       "type": "apps",
-      "blocks": {
-        "trainingclass1_star_rating_mMkatW": {
-          "type": "shopify:\/\/apps\/trainingclass1\/blocks\/star_rating\/ab9584d6-0917-4ccc-97db-01b78332556b",
-          "settings": {
-            "product": "",
-            "colour": "#ff0000"
-          }
-        }
-      },
-      "block_order": [
-        "trainingclass1_star_rating_mMkatW"
-      ],
       "settings": {
         "include_margins": true
       }
     },
     "171652905413750787": {
       "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1716535541559a0e1e": {
+      "type": "apps",
       "blocks": {
-        "trainingclass1_accordian_FtzePB": {
-          "type": "shopify:\/\/apps\/trainingclass1\/blocks\/accordian\/ab9584d6-0917-4ccc-97db-01b78332556b",
+        "judge_me_reviews_review_widget_homepage_p3pGPb": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget_homepage\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "title": "Test",
-            "content": "DefauTest lt Content"
+            "product": ""
           }
         }
       },
       "block_order": [
-        "trainingclass1_accordian_FtzePB"
+        "judge_me_reviews_review_widget_homepage_p3pGPb"
       ],
       "settings": {
         "include_margins": true
@@ -256,6 +249,7 @@
     "video",
     "multicolumn",
     "17164437513765b33d",
-    "171652905413750787"
+    "171652905413750787",
+    "1716535541559a0e1e"
   ]
 }

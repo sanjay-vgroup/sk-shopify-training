@@ -128,14 +128,6 @@
     "content_for_index": [
 
     ],
-    "blocks": {
-      "7496502497185016360": {
-        "type": "shopify:\/\/apps\/trainingclass1\/blocks\/float\/ab9584d6-0917-4ccc-97db-01b78332556b",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    },
     "color_schemes": {
       "scheme-1": {
         "settings": {

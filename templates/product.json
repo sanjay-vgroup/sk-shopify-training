@@ -247,17 +247,27 @@
     },
     "1716526540e308dbe0": {
       "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1716535578e42b6bdc": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "171653558686a4c99f": {
+      "type": "apps",
       "blocks": {
-        "trainingclass1_star_rating_BRxiDP": {
-          "type": "shopify:\/\/apps\/trainingclass1\/blocks\/star_rating\/ab9584d6-0917-4ccc-97db-01b78332556b",
+        "judge_me_reviews_review_widget_WwrGfC": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "product": "{{product}}",
-            "colour": "#ff0000"
           }
         }
       },
       "block_order": [
-        "trainingclass1_star_rating_BRxiDP"
+        "judge_me_reviews_review_widget_WwrGfC"
       ],
       "settings": {
         "include_margins": true
@@ -269,6 +279,8 @@
     "image-with-text",
     "multicolumn",
     "related-products",
-    "1716526540e308dbe0"
+    "1716526540e308dbe0",
+    "1716535578e42b6bdc",
+    "171653558686a4c99f"
   ]
 }
